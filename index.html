@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Effecto Consulting &amp; Services | Wills Writing</title>
+<meta name="description" content="Wills Writing by Effecto Consulting & Services. Put your wishes in a properly written will. Enquire on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Hanken+Grotesk:wght@400;500;600&family=Caveat:wght@500;600&family=Noto+Serif+SC:wght@500;600&family=Noto+Sans+SC:wght@400;500;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f3f4f7; --sheet:#ffffff; --ink:#1c2230; --muted:#566070;
+  --pen:#1f3fa8; --pen-soft:#e6ebfa; --navy:#121a3a; --rule:#d3d8e1;
+  --wa:#25d366; --wa-dark:#1da851;
+  --serif:Newsreader,"Noto Serif SC",Georgia,serif;
+  --sans:"Hanken Grotesk","Noto Sans SC",system-ui,sans-serif;
+  --hand:Caveat,"Ma Shan Zheng",cursive;
+}
+html[lang="zh-CN"]{
+  --serif:"Noto Serif SC","Songti SC",SimSun,Newsreader,serif;
+  --sans:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;font-size:1.0625rem;-webkit-font-smoothing:antialiased}
+html[lang="zh-CN"] body{line-height:1.8}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15;letter-spacing:-.01em}
+html[lang="zh-CN"] h1,html[lang="zh-CN"] h2,html[lang="zh-CN"] h3{letter-spacing:0;line-height:1.35}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pen);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.band{padding:88px 0}
+h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:16px}
+.lead{color:var(--muted);max-width:56ch}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(243,244,247,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.brand{text-decoration:none;display:block;line-height:1.15}
+.brand b{display:block;font-family:var(--serif);font-weight:600;font-size:1.18rem;letter-spacing:-.005em}
+.brand small{display:block;font-size:.8rem;color:var(--pen);font-weight:600;margin-top:2px}
+.nav-r{display:flex;align-items:center;gap:22px}
+.nav-r > a:not(.btn){text-decoration:none;font-size:.95rem;color:var(--muted)}
+.nav-r > a:not(.btn):hover{color:var(--pen)}
+.lang{display:inline-flex;border:1.5px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--sheet)}
+.lang button{border:0;background:transparent;padding:6px 12px;font:inherit;font-size:.85rem;font-weight:600;color:var(--muted);cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--pen);color:#fff}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;border-radius:10px;font-weight:600;font-size:1rem;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:background .15s}
+.btn svg{width:20px;height:20px;fill:currentColor;flex:none}
+.btn-wa{background:var(--wa);color:#06361a}
+.btn-wa:hover{background:var(--wa-dark);color:#fff}
+.btn-sm{padding:9px 16px;font-size:.9rem}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:#fff}
+
+/* hero */
+.hero{padding:72px 0 88px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,480px);gap:64px;align-items:center}
+.hero h1{font-size:clamp(2.5rem,5.4vw,4.2rem);margin-bottom:22px;max-width:14ch}
+html[lang="zh-CN"] .hero h1{max-width:12em}
+.hero .lead{font-size:1.15rem;margin-bottom:30px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-note{margin-top:22px;font-size:.92rem;color:var(--muted);max-width:46ch}
+
+/* the will sheet */
+.sheet{position:relative;background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:34px 34px 30px 58px;box-shadow:0 1px 0 var(--rule),0 24px 48px -28px rgba(18,26,58,.45)}
+.sheet::before{content:"";position:absolute;left:38px;top:0;bottom:0;width:1px;background:#e8b4b4}
+.sheet h2{font-size:1.5rem;margin-bottom:22px;text-align:left}
+.sheet p{margin-bottom:6px}
+.line-i{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 8px;font-family:var(--serif);font-size:1.08rem;margin-bottom:22px}
+.name-wrap{position:relative;flex:1 1 150px;min-width:140px}
+.name-wrap input{width:100%;border:0;background:transparent;font-family:var(--hand);font-size:1.9rem;line-height:1.2;color:var(--pen);padding:0 2px;outline:none}
+.name-wrap input::placeholder{color:#9aa8d6}
+.name-wrap::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--pen);transform-origin:left;animation:ink 1.1s .35s cubic-bezier(.3,.7,.2,1) both}
+.name-wrap:focus-within::after{height:3px}
+@keyframes ink{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.q{font-family:var(--serif);font-size:1.08rem;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{font:inherit;font-size:.95rem;padding:7px 14px;border-radius:999px;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.chip:hover{border-color:var(--pen)}
+.chip[aria-pressed="true"]{background:var(--pen);border-color:var(--pen);color:#fff}
+.chip[aria-pressed="true"]::before{content:"✓"}
+.sheet .btn{width:100%}
+.sheet .fine{font-size:.82rem;color:var(--muted);margin:12px 0 0;text-align:center}
+
+/* point-and-click demo on the sheet */
+.cursor{position:absolute;left:0;top:0;width:26px;height:26px;pointer-events:none;z-index:5;opacity:0;transition:transform .9s cubic-bezier(.45,.05,.25,1),opacity .3s;filter:drop-shadow(0 2px 3px rgba(18,26,58,.35))}
+.cursor.on{opacity:1}
+.cursor svg{width:100%;height:100%;display:block;transform-origin:3px 2px;transition:transform .12s}
+.cursor.down svg{transform:scale(.8)}
+.ripple{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border:2px solid var(--pen);border-radius:50%;pointer-events:none;z-index:4;animation:ripple .6s ease-out forwards}
+@keyframes ripple{from{transform:scale(.3);opacity:.9}to{transform:scale(1.5);opacity:0}}
+.sheet .btn.demo-press{background:var(--wa-dark);color:#fff}
+.demo-toast{position:absolute;left:50%;transform:translate(-50%,6px);background:var(--navy);color:#fff;font-size:.88rem;padding:8px 14px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:5}
+.demo-toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* services */
+.svc{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
+.svc-head{position:sticky;top:112px}
+.rows{border-top:1.5px solid var(--ink)}
+.row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.row h3{font-size:1.25rem}
+.row p{color:var(--muted)}
+
+/* compare */
+.cmp{background:var(--navy);color:#e9ecf6}
+.cmp h2{color:#fff}
+.cmp .lead{color:#aeb7d6}
+.cmp-rows{margin-top:44px;border-top:1px solid rgba(255,255,255,.28)}
+.cmp-row{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,4.5fr) minmax(0,4.5fr);gap:32px;padding:26px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.cmp-row h3{font-size:1.2rem;color:#fff}
+.cmp-row .tag{display:block;font-size:.85rem;font-weight:600;margin-bottom:4px}
+.cmp-row .yes .tag{color:#a9bdff}
+.cmp-row .no .tag{color:#aeb7d6;opacity:.85}
+.cmp-row .no p{color:#aeb7d6}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:44px;border-top:1.5px solid var(--ink)}
+.step{padding:22px 24px 0 0}
+.step .n{font-family:var(--serif);font-size:2.6rem;line-height:1;color:var(--pen);display:block;margin-bottom:14px}
+.step h3{font-size:1.2rem;margin-bottom:8px}
+.step p{color:var(--muted);font-size:1rem}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
+details{border-bottom:1px solid var(--rule);padding:20px 0}
+details:first-of-type{border-top:1.5px solid var(--ink)}
+summary{cursor:pointer;font-family:var(--serif);font-size:1.18rem;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--sans);font-size:1.5rem;line-height:1;color:var(--pen)}
+details[open] summary::after{content:"–"}
+details p{margin-top:12px;color:var(--muted);max-width:60ch}
+
+/* contact */
+.cta{background:var(--navy);color:#fff}
+.cta-in{display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
+.cta h2{color:#fff;max-width:18ch;margin-bottom:12px}
+.cta p{color:#aeb7d6;max-width:46ch}
+.cta .num{font-family:var(--serif);font-size:1.5rem;color:#fff;margin:18px 0 0}
+.cta .btn{padding:18px 32px;font-size:1.1rem}
+
+footer{padding:36px 0 96px;font-size:.88rem;color:var(--muted)}
+footer p+p{margin-top:8px;max-width:70ch}
+footer b{color:var(--ink);font-weight:600}
+
+.fab{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 24px rgba(18,26,58,.35)}
+.fab:hover{background:var(--wa-dark)}
+.fab svg{width:30px;height:30px;fill:#fff}
+
+@media(max-width:900px){
+  .band{padding:64px 0}
+  .hero{padding:44px 0 64px}
+  .hero-grid,.svc,.faq-grid{grid-template-columns:minmax(0,1fr);gap:36px}
+  .svc-head{position:static}
+  .row{grid-template-columns:minmax(0,1fr);gap:6px}
+  .cmp-row{grid-template-columns:minmax(0,1fr);gap:14px}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:32px}
+  .nav-r > a:not(.btn){display:none}
+}
+@media(max-width:560px){
+  .wrap{padding:0 18px}
+  .nav-r .btn{display:none}
+  .sheet{padding:26px 22px 24px 40px}
+  .sheet::before{left:26px}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .hero-actions .btn,.cta .btn{width:100%}
+  .brand b{font-size:1.02rem}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.4-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.5.3.1.2.1.8-.1 1.4z"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <b>Effecto Consulting &amp; Services</b>
+      <small data-i18n="tag">Wills Writing</small>
+    </a>
+    <div class="nav-r">
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#process" data-i18n="nav_process">How it works</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      <a class="btn btn-wa btn-sm wa-link" href="#" target="_blank" rel="noopener" data-i18n="nav_cta">Chat on WhatsApp</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh-CN" aria-pressed="false" lang="zh-CN">简体中文</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 data-i18n="hero_h1">Put your wishes in writing, before someone else has to guess them.</h1>
+      <p class="lead" data-i18n="hero_p">We help you write a will that names who receives what, who looks after your children, and who carries out your wishes. Plain language, one step at a time.</p>
+      <div class="hero-actions">
+        <a class="btn btn-wa wa-link" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg><span data-i18n="hero_cta">Chat on WhatsApp</span></a>
+        <a class="btn btn-line" href="#services" data-i18n="hero_cta2">See what we do</a>
+      </div>
+      <p class="hero-note" data-i18n="hero_note">Your first enquiry is free, and what you tell us stays private.</p>
+    </div>
+
+    <form class="sheet" id="enquiry" autocomplete="off">
+      <h2 data-i18n="doc_title">Last will and testament</h2>
+      <div class="line-i">
+        <span data-i18n="doc_pre">I,</span>
+        <span class="name-wrap"><input id="name" name="name" maxlength="60" autocomplete="name" data-i18n-ph="doc_ph" data-i18n-aria="doc_aria" placeholder="your name"></span>
+        <span data-i18n="doc_post">declare this to be my last will.</span>
+      </div>
+      <p class="q" id="q1" data-i18n="doc_q1">I want my estate to go to:</p>
+      <div class="chips" role="group" aria-labelledby="q1" id="beneficiaries">
+        <button type="button" class="chip" aria-pressed="false" data-i18n="c1">My spouse</button>
+        <button type="button" class="chip" aria-pressed="false" data-i18n="c2">My children</button>
+        <button type="button" class="chip" aria-pressed="false" data-i18n="c3">My parents</button>
+        <button type="button" class="chip" aria-pressed="false" data-i18n="c4">My siblings</button>
+        <button type="button" class="chip" aria-pressed="false" data-i18n="c5">Charity</button>
+        <button type="button" class="chip" aria-pressed="false" data-i18n="c6">Someone else</button>
+      </div>
+      <p class="q" id="q2" data-i18n="doc_q2">Also:</p>
+      <div class="chips" role="group" aria-labelledby="q2" id="extras">
+        <button type="button" class="chip" aria-pressed="false" data-i18n="x1">I have children under 18</button>
+        <button type="button" class="chip" aria-pressed="false" data-i18n="x2">I already have a will</button>
+      </div>
+      <button class="btn btn-wa" type="submit"><svg><use href="#wa"/></svg><span data-i18n="f_send">Send this to us on WhatsApp</span></button>
+      <p class="fine" data-i18n="f_note">This opens WhatsApp with your answers. Nothing is saved on this site.</p>
+      <div class="demo-toast" id="toast" aria-hidden="true" data-i18n="demo_toast">WhatsApp opens with your answers</div>
+      <div class="cursor" id="cursor" aria-hidden="true"><svg viewBox="0 0 26 26"><path d="M3 2v18l5-4.5 3.500 7.500 3-1.300-3.500-7.400H18z" fill="#fff" stroke="#1c2230" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+    </form>
+  </div>
+</section>
+
+<section class="band" id="services" style="padding-top:24px">
+  <div class="wrap svc">
+    <div class="svc-head">
+      <h2 data-i18n="svc_h2">Wills and estate planning, handled together</h2>
+      <p class="lead" data-i18n="svc_lead">Writing your first will, or updating what you already have, we help you put the right documents in place.</p>
+    </div>
+    <div class="rows">
+      <div class="row"><h3 data-i18n="s1_h">Will writing</h3><p data-i18n="s1_p">A clear, valid will naming your beneficiaries, your executor, and guardians for any children under 18.</p></div>
+      <div class="row"><h3 data-i18n="s2_h">Asset and property planning</h3><p data-i18n="s2_p">Decide how your property, savings, investments and business interests are passed on.</p></div>
+      <div class="row"><h3 data-i18n="s3_h">Guardianship and trusts</h3><p data-i18n="s3_p">Set up care and financial arrangements for young or vulnerable family members.</p></div>
+      <div class="row"><h3 data-i18n="s4_h">Will review and updates</h3><p data-i18n="s4_p">Revise your will after marriage, a new child, a move or a change in what you own.</p></div>
+      <div class="row"><h3 data-i18n="s5_h">Safekeeping guidance</h3><p data-i18n="s5_p">Where to keep your will, and how your executor can find and use it when needed.</p></div>
+      <div class="row"><h3 data-i18n="s6_h">Estate administration support</h3><p data-i18n="s6_p">Guidance for your family on the steps that follow, so they are not left guessing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band cmp">
+  <div class="wrap">
+    <h2 data-i18n="why_h2">What a will changes</h2>
+    <p class="lead" data-i18n="why_lead">Without a valid will, your estate is usually shared out by a fixed legal formula. A will lets you decide instead. Details vary by situation, so ask us about yours.</p>
+    <div class="cmp-rows">
+      <div class="cmp-row">
+        <h3 data-i18n="r1_h">Who receives your assets</h3>
+        <div class="yes"><span class="tag" data-i18n="with">With a will</span><p data-i18n="r1_y">You choose each beneficiary and what they receive.</p></div>
+        <div class="no"><span class="tag" data-i18n="without">Without a will</span><p data-i18n="r1_n">The law's formula decides, which may not match your wishes.</p></div>
+      </div>
+      <div class="cmp-row">
+        <h3 data-i18n="r2_h">Who cares for your children</h3>
+        <div class="yes"><span class="tag" data-i18n="with">With a will</span><p data-i18n="r2_y">You name the guardian you trust.</p></div>
+        <div class="no"><span class="tag" data-i18n="without">Without a will</span><p data-i18n="r2_n">A court may have to decide.</p></div>
+      </div>
+      <div class="cmp-row">
+        <h3 data-i18n="r3_h">Who manages your estate</h3>
+        <div class="yes"><span class="tag" data-i18n="with">With a will</span><p data-i18n="r3_y">Your chosen executor acts on your instructions.</p></div>
+        <div class="no"><span class="tag" data-i18n="without">Without a will</span><p data-i18n="r3_n">Your family may need to apply to be appointed first.</p></div>
+      </div>
+      <div class="cmp-row">
+        <h3 data-i18n="r4_h">What your family goes through</h3>
+        <div class="yes"><span class="tag" data-i18n="with">With a will</span><p data-i18n="r4_y">Clear instructions mean fewer delays and disagreements.</p></div>
+        <div class="no"><span class="tag" data-i18n="without">Without a will</span><p data-i18n="r4_n">More paperwork, more waiting, and more room for disputes.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="process">
+  <div class="wrap">
+    <h2 data-i18n="proc_h2">Four steps from first message to signed will</h2>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><h3 data-i18n="p1_h">Message us</h3><p data-i18n="p1_p">Tell us a little about your situation on WhatsApp. No forms.</p></div>
+      <div class="step"><span class="n">2</span><h3 data-i18n="p2_h">Talk it through</h3><p data-i18n="p2_p">We ask about your family, assets and wishes, and explain your options.</p></div>
+      <div class="step"><span class="n">3</span><h3 data-i18n="p3_h">Review the draft</h3><p data-i18n="p3_p">We prepare your will in clear language. You read it and request changes.</p></div>
+      <div class="step"><span class="n">4</span><h3 data-i18n="p4_h">Sign and store</h3><p data-i18n="p4_p">We guide you through signing it correctly and keeping it safe.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="faq" style="padding-top:0">
+  <div class="wrap faq-grid">
+    <div><h2 data-i18n="faq_h2">Questions we hear most</h2></div>
+    <div>
+      <details><summary data-i18n="q1">Do I need a will if I don't own much?</summary><p data-i18n="a1">Yes. A will also decides who looks after your children and who handles your affairs, whatever the size of your estate.</p></details>
+      <details><summary data-i18n="q2">How long does it take?</summary><p data-i18n="a2">It depends on how complex your situation is. Many straightforward wills can be drafted soon after we talk. Message us for an estimate.</p></details>
+      <details><summary data-i18n="q3">Can I change my will later?</summary><p data-i18n="a3">Yes. Update it whenever your circumstances change, for example after marriage, a new child or buying property.</p></details>
+      <details><summary data-i18n="q4">Is my information confidential?</summary><p data-i18n="a4">Yes. What you share is kept private and used only to prepare your documents.</p></details>
+      <details><summary data-i18n="q5">How much does it cost?</summary><p data-i18n="a5">It depends on what you need. Message us and we will quote clearly before you commit to anything.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="band cta" id="contact">
+  <div class="wrap cta-in">
+    <div>
+      <h2 data-i18n="ct_h2">Start with one message</h2>
+      <p data-i18n="ct_p">Tell us what you want to protect. We usually reply during business hours.</p>
+      <p class="num" id="num"></p>
+    </div>
+    <a class="btn btn-wa wa-link" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg><span data-i18n="ct_cta">Chat on WhatsApp</span></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p id="copy"></p>
+    <p data-i18n="disclaimer">The information on this site is general and is not legal advice. Contact us about your specific circumstances.</p>
+  </div>
+</footer>
+
+<a class="fab wa-link" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#wa"/></svg></a>
+
+<script>
+/* ===== EDIT THESE ===== */
+const WHATSAPP_NUMBER  = "60167186122";      // international format, digits only
+const WHATSAPP_DISPLAY = "+60 16-718 6122";  // how the number is shown on the page
+const COMPANY = "Effecto Consulting & Services";
+/* ====================== */
+
+const I18N = {
+  en: {
+    title: "Effecto Consulting & Services | Wills Writing",
+    meta_desc: "Wills Writing by Effecto Consulting & Services. Put your wishes in a properly written will. Enquire on WhatsApp.",
+    default_msg: "Hi " + COMPANY + ", I'd like to enquire about Wills Writing.",
+    m_intro: "Hi " + COMPANY + ", I'd like to enquire about writing a will.",
+    m_name: "My name: {v}", m_to: "I want my estate to go to: {v}", m_extra: "Also: {v}",
+    sep: ", ",
+    copy: "© {y} " + COMPANY + ". All rights reserved.",
+    tag: "Wills Writing",
+    nav_services: "Services", nav_process: "How it works", nav_faq: "FAQ", nav_cta: "Chat on WhatsApp",
+    hero_h1: "Put your wishes in writing, before someone else has to guess them.",
+    hero_p: "We help you write a will that names who receives what, who looks after your children, and who carries out your wishes. Plain language, one step at a time.",
+    hero_cta: "Chat on WhatsApp", hero_cta2: "See what we do",
+    hero_note: "Your first enquiry is free, and what you tell us stays private.",
+    doc_title: "Last will and testament", doc_pre: "I,", doc_post: "declare this to be my last will.",
+    doc_ph: "your name", doc_aria: "Your name",
+    doc_q1: "I want my estate to go to:", doc_q2: "Also:",
+    c1: "My spouse", c2: "My children", c3: "My parents", c4: "My siblings", c5: "Charity", c6: "Someone else",
+    x1: "I have children under 18", x2: "I already have a will",
+    f_send: "Send this to us on WhatsApp", f_note: "This opens WhatsApp with your answers. Nothing is saved on this site.",
+    demo_name: "Tan Wei Ming", demo_toast: "WhatsApp opens with your answers",
+    svc_h2: "Wills and estate planning, handled together",
+    svc_lead: "Writing your first will, or updating what you already have, we help you put the right documents in place.",
+    s1_h: "Will writing", s1_p: "A clear, valid will naming your beneficiaries, your executor, and guardians for any children under 18.",
+    s2_h: "Asset and property planning", s2_p: "Decide how your property, savings, investments and business interests are passed on.",
+    s3_h: "Guardianship and trusts", s3_p: "Set up care and financial arrangements for young or vulnerable family members.",
+    s4_h: "Will review and updates", s4_p: "Revise your will after marriage, a new child, a move or a change in what you own.",
+    s5_h: "Safekeeping guidance", s5_p: "Where to keep your will, and how your executor can find and use it when needed.",
+    s6_h: "Estate administration support", s6_p: "Guidance for your family on the steps that follow, so they are not left guessing.",
+    why_h2: "What a will changes",
+    why_lead: "Without a valid will, your estate is usually shared out by a fixed legal formula. A will lets you decide instead. Details vary by situation, so ask us about yours.",
+    with: "With a will", without: "Without a will",
+    r1_h: "Who receives your assets", r1_y: "You choose each beneficiary and what they receive.", r1_n: "The law's formula decides, which may not match your wishes.",
+    r2_h: "Who cares for your children", r2_y: "You name the guardian you trust.", r2_n: "A court may have to decide.",
+    r3_h: "Who manages your estate", r3_y: "Your chosen executor acts on your instructions.", r3_n: "Your family may need to apply to be appointed first.",
+    r4_h: "What your family goes through", r4_y: "Clear instructions mean fewer delays and disagreements.", r4_n: "More paperwork, more waiting, and more room for disputes.",
+    proc_h2: "Four steps from first message to signed will",
+    p1_h: "Message us", p1_p: "Tell us a little about your situation on WhatsApp. No forms.",
+    p2_h: "Talk it through", p2_p: "We ask about your family, assets and wishes, and explain your options.",
+    p3_h: "Review the draft", p3_p: "We prepare your will in clear language. You read it and request changes.",
+    p4_h: "Sign and store", p4_p: "We guide you through signing it correctly and keeping it safe.",
+    faq_h2: "Questions we hear most",
+    q1: "Do I need a will if I don't own much?", a1: "Yes. A will also decides who looks after your children and who handles your affairs, whatever the size of your estate.",
+    q2: "How long does it take?", a2: "It depends on how complex your situation is. Many straightforward wills can be drafted soon after we talk. Message us for an estimate.",
+    q3: "Can I change my will later?", a3: "Yes. Update it whenever your circumstances change, for example after marriage, a new child or buying property.",
+    q4: "Is my information confidential?", a4: "Yes. What you share is kept private and used only to prepare your documents.",
+    q5: "How much does it cost?", a5: "It depends on what you need. Message us and we will quote clearly before you commit to anything.",
+    ct_h2: "Start with one message", ct_p: "Tell us what you want to protect. We usually reply during business hours.", ct_cta: "Chat on WhatsApp",
+    disclaimer: "The information on this site is general and is not legal advice. Contact us about your specific circumstances."
+  },
+  "zh-CN": {
+    title: "Effecto Consulting & Services | 遗嘱撰写",
+    meta_desc: "Effecto Consulting & Services 遗嘱撰写服务。把您的心愿写进一份规范的遗嘱。欢迎通过 WhatsApp 咨询。",
+    default_msg: "您好 " + COMPANY + "，我想咨询遗嘱撰写服务。",
+    m_intro: "您好 " + COMPANY + "，我想咨询撰写遗嘱的事宜。",
+    m_name: "我的姓名：{v}", m_to: "我希望遗产留给：{v}", m_extra: "另外：{v}",
+    sep: "、",
+    copy: "© {y} " + COMPANY + " 版权所有。",
+    tag: "遗嘱撰写",
+    nav_services: "服务项目", nav_process: "办理流程", nav_faq: "常见问题", nav_cta: "WhatsApp 咨询",
+    hero_h1: "把您的心愿写下来，别让家人日后去猜。",
+    hero_p: "我们协助您撰写遗嘱，写明谁继承什么、谁照顾您的孩子、谁来执行您的心愿。语言通俗，一步一步来。",
+    hero_cta: "WhatsApp 咨询", hero_cta2: "了解我们的服务",
+    hero_note: "首次咨询免费，您提供的信息会严格保密。",
+    doc_title: "遗嘱", doc_pre: "立遗嘱人", doc_post: "，声明以下为我的遗嘱。",
+    doc_ph: "您的姓名", doc_aria: "您的姓名",
+    doc_q1: "我希望遗产留给：", doc_q2: "另外：",
+    c1: "配偶", c2: "子女", c3: "父母", c4: "兄弟姐妹", c5: "慈善机构", c6: "其他人",
+    x1: "我有未满 18 岁的孩子", x2: "我已经有一份遗嘱",
+    f_send: "通过 WhatsApp 发送给我们", f_note: "此操作将打开 WhatsApp 并带上您的选择，本网站不会保存任何信息。",
+    demo_name: "陈伟明", demo_toast: "WhatsApp 将带着您的选择打开",
+    svc_h2: "遗嘱与遗产规划，一并办妥",
+    svc_lead: "无论是首次立遗嘱，还是更新现有安排，我们都协助您备妥合适的文件。",
+    s1_h: "遗嘱撰写", s1_p: "清晰有效的遗嘱，列明受益人、执行人，以及未满 18 岁子女的监护人。",
+    s2_h: "资产与房产规划", s2_p: "决定房产、存款、投资和生意权益如何传承。",
+    s3_h: "监护与信托", s3_p: "为年幼或需要照顾的家人安排照护与财务保障。",
+    s4_h: "遗嘱审阅与更新", s4_p: "结婚、添丁、搬迁或资产变动后，及时修订遗嘱。",
+    s5_h: "遗嘱保管指引", s5_p: "建议遗嘱的存放地点，以及执行人需要时如何找到并使用。",
+    s6_h: "遗产管理协助", s6_p: "为家人提供后续办理的指引，不必茫然无措。",
+    why_h2: "有了遗嘱，有什么不同",
+    why_lead: "没有有效的遗嘱，遗产通常按固定的法定比例分配；有了遗嘱，则由您自己决定。具体情况各有不同，欢迎向我们咨询。",
+    with: "有遗嘱", without: "没有遗嘱",
+    r1_h: "谁继承您的财产", r1_y: "由您指定每位受益人及所得份额。", r1_n: "按法定比例分配，未必符合您的心愿。",
+    r2_h: "谁来照顾您的孩子", r2_y: "由您指定信任的监护人。", r2_n: "可能需要由法院决定。",
+    r3_h: "谁来管理您的遗产", r3_y: "由您选定的执行人按您的指示办理。", r3_n: "家人可能需要先申请获委任。",
+    r4_h: "家人要面对什么", r4_y: "指示清晰，延误和争执更少。", r4_n: "手续更多、等待更久，也更容易产生纷争。",
+    proc_h2: "从第一条消息到签妥遗嘱，只需四步",
+    p1_h: "联系我们", p1_p: "通过 WhatsApp 简单说明您的情况，无需填表。",
+    p2_h: "详细沟通", p2_p: "我们了解您的家庭、资产和心愿，并讲解可行的方案。",
+    p3_h: "审阅草稿", p3_p: "我们用清晰的语言草拟遗嘱，由您阅读并提出修改。",
+    p4_h: "签署与保管", p4_p: "指导您正确签署，并妥善保管。",
+    faq_h2: "大家最常问的问题",
+    q1: "我的财产不多，还需要立遗嘱吗？", a1: "需要。遗嘱还能决定谁来照顾您的孩子、谁来处理您的事务，与财产多少无关。",
+    q2: "需要多长时间？", a2: "视情况的复杂程度而定。许多简单的遗嘱在沟通后即可很快草拟完成。欢迎联系我们了解大概时间。",
+    q3: "之后可以修改遗嘱吗？", a3: "可以。情况有变时，例如结婚、添丁或购置房产，随时都可以更新。",
+    q4: "我的资料会保密吗？", a4: "会。您提供的信息将严格保密，仅用于准备您的文件。",
+    q5: "费用是多少？", a5: "视您的需求而定。请联系我们，在您作出决定之前，我们会给出清晰的报价。",
+    ct_h2: "从一条消息开始", ct_p: "告诉我们您想保障什么。我们通常会在办公时间内回复。", ct_cta: "WhatsApp 咨询",
+    disclaimer: "本网站内容仅供一般参考，不构成法律意见。如有具体情况，请与我们联系。"
+  }
+};
+
+const KEY = "ww-lang";
+let lang = "en";
+const t = k => I18N[lang][k];
+const wa = text => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+
+function applyLang(l, persist) {
+  lang = I18N[l] ? l : "en";
+  document.documentElement.lang = lang;
+  document.title = t("title");
+  document.querySelector('meta[name="description"]').content = t("meta_desc");
+  document.querySelectorAll("[data-i18n]").forEach(el => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => { el.setAttribute("aria-label", t(el.dataset.i18nAria)); });
+  document.getElementById("copy").textContent = t("copy").replace("{y}", new Date().getFullYear());
+  document.getElementById("num").textContent = WHATSAPP_DISPLAY;
+  document.querySelectorAll(".wa-link").forEach(a => { a.href = wa(t("default_msg")); });
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+  if (persist) { try { localStorage.setItem(KEY, lang); } catch (e) {} }
+  if (typeof restartDemo === "function") restartDemo();
+}
+
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => applyLang(b.dataset.lang, true)));
+
+document.querySelectorAll(".chip").forEach(c => c.addEventListener("click", () => {
+  c.setAttribute("aria-pressed", String(c.getAttribute("aria-pressed") !== "true"));
+}));
+
+const picked = id => [...document.querySelectorAll(`#${id} .chip[aria-pressed="true"]`)].map(c => c.textContent.trim());
+
+document.getElementById("enquiry").addEventListener("submit", e => {
+  e.preventDefault();
+  const name = document.getElementById("name").value.trim();
+  const to = picked("beneficiaries"), extra = picked("extras");
+  const parts = [t("m_intro")];
+  if (name) parts.push(t("m_name").replace("{v}", name));
+  if (to.length) parts.push(t("m_to").replace("{v}", to.join(t("sep"))));
+  if (extra.length) parts.push(t("m_extra").replace("{v}", extra.join(t("sep"))));
+  window.open(wa(parts.join("\n")), "_blank", "noopener");
+});
+
+/* ---- Point-and-click demo on the sample will ----
+   Plays a looping cursor that fills in the sheet. Stops for good as soon as the
+   visitor touches the sheet, pauses when it scrolls out of view, and never runs
+   for people who prefer reduced motion. */
+const sheet = document.getElementById("enquiry");
+const cursor = document.getElementById("cursor");
+const toast = document.getElementById("toast");
+const nameInput = document.getElementById("name");
+const sendBtn = sheet.querySelector('button[type="submit"]');
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let runId = 0, tookOver = false, inView = false;
+
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+function pointAt(el, fx = .5, fy = .5) {
+  const s = sheet.getBoundingClientRect(), r = el.getBoundingClientRect();
+  return { x: r.left - s.left + r.width * fx, y: r.top - s.top + r.height * fy };
+}
+function moveTo(p) { cursor.style.transform = `translate(${p.x - 3}px, ${p.y - 2}px)`; }
+async function clickAt(p, id) {
+  cursor.classList.add("down");
+  const rp = document.createElement("span");
+  rp.className = "ripple"; rp.style.left = p.x + "px"; rp.style.top = p.y + "px";
+  sheet.appendChild(rp); setTimeout(() => rp.remove(), 650);
+  await sleep(130); cursor.classList.remove("down");
+}
+function resetDemo() {
+  nameInput.value = "";
+  sheet.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", "false"));
+  sendBtn.classList.remove("demo-press");
+  toast.classList.remove("on");
+  cursor.classList.remove("on");
+}
+
+async function playDemo(id) {
+  const alive = () => id === runId;
+  const chips = sheet.querySelectorAll(".chip");
+  const s = sheet.getBoundingClientRect();
+  while (alive()) {
+    resetDemo();
+    // start from the lower right, off the content
+    cursor.style.transition = "none";
+    moveTo({ x: s.width - 50, y: s.height - 40 });
+    cursor.offsetWidth; cursor.style.transition = "";
+    cursor.classList.add("on");
+    await sleep(700); if (!alive()) return;
+
+    let p = pointAt(nameInput, .35, .6); moveTo(p); await sleep(1000); if (!alive()) return;
+    await clickAt(p); if (!alive()) return;
+    for (const ch of t("demo_name")) { nameInput.value += ch; await sleep(110); if (!alive()) return; }
+    await sleep(450); if (!alive()) return;
+
+    for (const i of [0, 1, 6]) {           // spouse, children, "under 18"
+      const el = chips[i];
+      p = pointAt(el, .5, .55); moveTo(p); await sleep(900); if (!alive()) return;
+      await clickAt(p); if (!alive()) return;
+      el.setAttribute("aria-pressed", "true");
+      await sleep(350); if (!alive()) return;
+    }
+
+    p = pointAt(sendBtn, .5, .55); moveTo(p); await sleep(950); if (!alive()) return;
+    await clickAt(p); if (!alive()) return;
+    sendBtn.classList.add("demo-press");
+    const bp = pointAt(sendBtn, .5, 1);
+    toast.style.top = (bp.y + 10) + "px"; toast.classList.add("on");
+    await sleep(2200); if (!alive()) return;
+    toast.classList.remove("on"); cursor.classList.remove("on");
+    await sleep(900); if (!alive()) return;
+    resetDemo();
+    await sleep(1400);
+  }
+}
+
+function startDemo() {
+  if (reduceMotion || tookOver || !inView) return;
+  runId++; playDemo(runId);
+}
+function stopDemo() { runId++; resetDemo(); }
+function restartDemo() { stopDemo(); startDemo(); }
+
+// the visitor takes over: stop the demo and clear what it filled in
+["pointerdown", "keydown", "touchstart"].forEach(ev =>
+  sheet.addEventListener(ev, () => { if (!tookOver) { tookOver = true; stopDemo(); } }, { passive: true }));
+
+new IntersectionObserver(entries => {
+  inView = entries[0].isIntersecting;
+  inView ? startDemo() : stopDemo();
+}, { threshold: .6 }).observe(sheet);
+
+let saved = null;
+try { saved = localStorage.getItem(KEY); } catch (e) {}
+applyLang(saved || ((navigator.language || "").toLowerCase().startsWith("zh") ? "zh-CN" : "en"), false);
+</script>
+</body>
+</html>
