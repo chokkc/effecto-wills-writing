@@ -1,0 +1,12 @@
+name = "effecto-wills-chat"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+[vars]
+# Websites allowed to call this Worker (comma separated, exact origins)
+ALLOWED_ORIGINS = "https://chokkc.github.io"
+# Every question and reply is emailed here
+RECORD_EMAIL = "chokkc.m100@gmail.com"
+ANTHROPIC_MODEL = "claude-sonnet-5-5"
+# While using Resend's shared test sender, mail can only go to the email the Resend account was created with.
+RECORD_FROM = "Wills Writing Chat <onboarding@resend.dev>"

@@ -97,6 +97,55 @@ html[lang="zh-CN"] .hero h1{max-width:12em}
 .demo-toast{position:absolute;left:50%;transform:translate(-50%,6px);background:var(--navy);color:#fff;font-size:.88rem;padding:8px 14px;border-radius:8px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:5}
 .demo-toast.on{opacity:1;transform:translate(-50%,0)}
 
+/* background: soft light plus engraved wave field (certificate-style) */
+body{background:linear-gradient(180deg,#e9edf8 0,var(--paper) 760px)}
+.hero,.cmp,.cta{position:relative;overflow:hidden}
+.hero{background:radial-gradient(900px 480px at 88% -8%,#d6e0fa 0,transparent 62%),radial-gradient(700px 420px at 0% 0%,#e4e9f6 0,transparent 60%)}
+.waves{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.hero .waves{-webkit-mask-image:linear-gradient(180deg,#000 35%,transparent 100%);mask-image:linear-gradient(180deg,#000 35%,transparent 100%)}
+.hero > .wrap,.cmp > .wrap,.cta > .wrap{position:relative;z-index:1}
+#trace{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:60}
+
+/* AI chat */
+.chat-launch{position:fixed;right:18px;bottom:88px;z-index:30;display:inline-flex;gap:8px;align-items:center;background:var(--navy);color:#fff;border:0;border-radius:999px;padding:12px 18px;font:inherit;font-size:.95rem;font-weight:600;cursor:pointer;box-shadow:0 8px 24px rgba(18,26,58,.35)}
+.chat-launch:hover{background:#1b2652}
+.chat-launch svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.chat{position:fixed;right:18px;bottom:88px;z-index:40;width:min(390px,calc(100vw - 36px));height:min(580px,calc(100vh - 120px));background:var(--sheet);border:1px solid var(--rule);border-radius:14px;box-shadow:0 24px 60px -20px rgba(18,26,58,.55);display:flex;flex-direction:column;overflow:hidden}
+.chat[hidden],.chat-launch[hidden]{display:none}
+.chat-h{background:var(--navy);color:#fff;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.chat-h b{font-family:var(--serif);font-weight:500;font-size:1.1rem;display:block}
+.chat-h small{color:#aeb7d6;font-size:.8rem}
+.chat-x{background:transparent;border:0;color:#fff;font-size:1.6rem;line-height:1;cursor:pointer;padding:4px 8px;border-radius:6px}
+.chat-consent{padding:18px 16px;font-size:.92rem;overflow:auto}
+.chat-consent p{margin-bottom:14px;color:var(--muted)}
+.chat-consent .btn{width:100%}
+.chat-body{display:none;flex:1;min-height:0;flex-direction:column}
+.chat[data-ok="true"] .chat-body{display:flex}
+.chat[data-ok="true"] .chat-consent{display:none}
+.chat-log{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--paper)}
+.msg{max-width:88%;padding:10px 13px;border-radius:12px;font-size:.95rem;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}
+.msg-bot{background:#fff;border:1px solid var(--rule);align-self:flex-start}
+.msg-user{background:var(--pen);color:#fff;align-self:flex-end}
+.msg-note{align-self:center;color:var(--muted);font-size:.82rem;text-align:center;padding:2px 6px}
+.msg-typing{display:inline-flex;gap:4px;padding:14px}
+.msg-typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:blink 1s infinite ease-in-out}
+.msg-typing i:nth-child(2){animation-delay:.15s}.msg-typing i:nth-child(3){animation-delay:.3s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+.chat-sugg{display:flex;flex-wrap:wrap;gap:6px;padding:8px 14px 10px;background:var(--paper)}
+.sg{font:inherit;font-size:.85rem;padding:5px 11px;border-radius:999px;border:1.5px solid var(--rule);background:var(--sheet);color:var(--ink);cursor:pointer}
+.sg:hover{border-color:var(--pen)}
+.chat-form{display:flex;gap:8px;padding:12px 14px 8px;border-top:1px solid var(--rule);background:var(--sheet)}
+.chat-form input{flex:1;min-width:0;border:1.5px solid var(--rule);border-radius:10px;padding:10px 12px;font:inherit;font-size:.95rem;color:var(--ink)}
+.chat-form input:focus{outline:none;border-color:var(--pen)}
+.chat-form button{border:0;background:var(--pen);color:#fff;border-radius:10px;width:44px;cursor:pointer;display:grid;place-items:center}
+.chat-form button:disabled{opacity:.5;cursor:default}
+.chat-form svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.chat-foot{padding:0 14px 12px;font-size:.78rem;color:var(--muted);background:var(--sheet)}
+.chat-foot a{color:var(--pen)}
+@media(max-width:560px){
+  .chat{right:0;left:0;bottom:0;width:auto;height:min(82vh,640px);border-radius:16px 16px 0 0}
+}
+
 /* services */
 .svc{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:start}
 .svc-head{position:sticky;top:112px}
@@ -201,6 +250,7 @@ footer b{color:var(--ink);font-weight:600}
 
 <main id="top">
 <section class="hero">
+  <canvas class="waves" data-stroke="31,63,168" data-alpha="0.11" aria-hidden="true"></canvas>
   <div class="wrap hero-grid">
     <div>
       <h1 data-i18n="hero_h1">Put your wishes in writing, before someone else has to guess them.</h1>
@@ -259,6 +309,7 @@ footer b{color:var(--ink);font-weight:600}
 </section>
 
 <section class="band cmp">
+  <canvas class="waves" data-stroke="255,255,255" data-alpha="0.07" aria-hidden="true"></canvas>
   <div class="wrap">
     <h2 data-i18n="why_h2">What a will changes</h2>
     <p class="lead" data-i18n="why_lead">Without a valid will, your estate is usually shared out by a fixed legal formula. A will lets you decide instead. Details vary by situation, so ask us about yours.</p>
@@ -313,6 +364,7 @@ footer b{color:var(--ink);font-weight:600}
 </section>
 
 <section class="band cta" id="contact">
+  <canvas class="waves" data-stroke="255,255,255" data-alpha="0.08" aria-hidden="true"></canvas>
   <div class="wrap cta-in">
     <div>
       <h2 data-i18n="ct_h2">Start with one message</h2>
@@ -333,11 +385,45 @@ footer b{color:var(--ink);font-weight:600}
 
 <a class="fab wa-link" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#wa"/></svg></a>
 
+<canvas id="trace" aria-hidden="true"></canvas>
+
+<!-- AI question assistant -->
+<button type="button" class="chat-launch" id="chatLaunch" aria-controls="chat" aria-expanded="false">
+  <svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
+  <span data-i18n="ch_launch">Ask a question</span>
+</button>
+<section class="chat" id="chat" role="dialog" aria-modal="false" aria-labelledby="chatTitle" hidden data-ok="false">
+  <div class="chat-h">
+    <div><b id="chatTitle" data-i18n="ch_title">Ask about estate planning</b><small data-i18n="ch_sub">AI assistant for Malaysia</small></div>
+    <button type="button" class="chat-x" id="chatClose" data-i18n-aria="ch_close" aria-label="Close">×</button>
+  </div>
+  <div class="chat-consent">
+    <p data-i18n="ch_consent">This assistant is AI and gives general information about estate planning in Malaysia. It is not legal advice. Your questions and the replies are recorded, and a copy is emailed to Effecto Consulting &amp; Services for our records. Please don't share IC numbers, bank details or passwords.</p>
+    <button type="button" class="btn btn-wa btn-sm" id="chatAgree" data-i18n="ch_agree">I understand, start chat</button>
+  </div>
+  <div class="chat-body">
+    <div class="chat-log" id="chatLog" role="log" aria-live="polite"></div>
+    <div class="chat-sugg" id="chatSugg">
+      <button type="button" class="sg" data-i18n="sg1">Do I need a will in Malaysia?</button>
+      <button type="button" class="sg" data-i18n="sg2">What if I die without a will?</button>
+      <button type="button" class="sg" data-i18n="sg3">Does a will apply to Muslims?</button>
+      <button type="button" class="sg" data-i18n="sg4">Who can be my executor?</button>
+    </div>
+    <form class="chat-form" id="chatForm" autocomplete="off">
+      <input id="chatInput" maxlength="600" data-i18n-ph="ch_ph" data-i18n-aria="ch_ph" placeholder="Type your question">
+      <button type="submit" id="chatSend" data-i18n-aria="ch_send" aria-label="Send"><svg viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
+    </form>
+    <p class="chat-foot"><span data-i18n="ch_foot">Prefer to talk to a person?</span> <a class="wa-link" href="#" target="_blank" rel="noopener" data-i18n="nav_cta">Chat on WhatsApp</a></p>
+  </div>
+</section>
+
 <script>
 /* ===== EDIT THESE ===== */
 const WHATSAPP_NUMBER  = "60167186122";      // international format, digits only
 const WHATSAPP_DISPLAY = "+60 16-718 6122";  // how the number is shown on the page
 const COMPANY = "Effecto Consulting & Services";
+// URL of the deployed chat Worker (see cloudflare-worker/README.md). Leave empty until deployed.
+const CHAT_API_URL = "";
 /* ====================== */
 
 const I18N = {
@@ -362,6 +448,15 @@ const I18N = {
     x1: "I have children under 18", x2: "I already have a will",
     f_send: "Send this to us on WhatsApp", f_note: "This opens WhatsApp with your answers. Nothing is saved on this site.",
     demo_name: "Tan Wei Ming", demo_toast: "WhatsApp opens with your answers",
+    ch_launch: "Ask a question", ch_title: "Ask about estate planning", ch_sub: "AI assistant for Malaysia",
+    ch_close: "Close chat", ch_send: "Send", ch_ph: "Type your question", ch_foot: "Prefer to talk to a person?",
+    ch_consent: "This assistant is AI and gives general information about estate planning in Malaysia. It is not legal advice. Your questions and the replies are recorded, and a copy is emailed to Effecto Consulting & Services for our records. Please don't share IC numbers, bank details or passwords.",
+    ch_agree: "I understand, start chat",
+    ch_welcome: "Hi, ask me anything about wills and estate planning in Malaysia. I can explain the basics, and our team can help with your own situation.",
+    ch_offline: "The assistant isn't switched on yet. Please message us on WhatsApp and we will answer you directly.",
+    ch_err: "Sorry, something went wrong and your question did not go through. Please try again, or message us on WhatsApp.",
+    ch_busy: "You're sending questions quite fast. Please wait a minute and try again.",
+    sg1: "Do I need a will in Malaysia?", sg2: "What if I die without a will?", sg3: "Does a will apply to Muslims?", sg4: "Who can be my executor?",
     svc_h2: "Wills and estate planning, handled together",
     svc_lead: "Writing your first will, or updating what you already have, we help you put the right documents in place.",
     s1_h: "Will writing", s1_p: "A clear, valid will naming your beneficiaries, your executor, and guardians for any children under 18.",
@@ -412,6 +507,15 @@ const I18N = {
     x1: "我有未满 18 岁的孩子", x2: "我已经有一份遗嘱",
     f_send: "通过 WhatsApp 发送给我们", f_note: "此操作将打开 WhatsApp 并带上您的选择，本网站不会保存任何信息。",
     demo_name: "陈伟明", demo_toast: "WhatsApp 将带着您的选择打开",
+    ch_launch: "在线提问", ch_title: "遗产规划问答", ch_sub: "马来西亚 AI 助手",
+    ch_close: "关闭对话", ch_send: "发送", ch_ph: "请输入您的问题", ch_foot: "想直接和真人沟通？",
+    ch_consent: "本助手由 AI 提供，仅就马来西亚的遗产规划提供一般性信息，不构成法律意见。您的提问与回复会被记录，副本将通过电邮发送给 Effecto Consulting & Services 存档。请勿提供身份证号码、银行资料或密码。",
+    ch_agree: "我已了解，开始对话",
+    ch_welcome: "您好，关于马来西亚的遗嘱与遗产规划，欢迎随时提问。我可以讲解基本知识，您的具体情况可由我们的团队协助。",
+    ch_offline: "助手尚未启用。请通过 WhatsApp 联系我们，我们会直接回复您。",
+    ch_err: "抱歉，出了点问题，您的问题没有发送成功。请再试一次，或通过 WhatsApp 联系我们。",
+    ch_busy: "您发送问题的速度有点快，请稍等一分钟再试。",
+    sg1: "在马来西亚需要立遗嘱吗？", sg2: "没有遗嘱去世会怎样？", sg3: "遗嘱适用于穆斯林吗？", sg4: "谁可以当遗嘱执行人？",
     svc_h2: "遗嘱与遗产规划，一并办妥",
     svc_lead: "无论是首次立遗嘱，还是更新现有安排，我们都协助您备妥合适的文件。",
     s1_h: "遗嘱撰写", s1_p: "清晰有效的遗嘱，列明受益人、执行人，以及未满 18 岁子女的监护人。",
@@ -571,6 +675,127 @@ new IntersectionObserver(entries => {
   inView = entries[0].isIntersecting;
   inView ? startDemo() : stopDemo();
 }, { threshold: .6 }).observe(sheet);
+
+/* ---- Engraved wave background (drawn once per size, no animation) ---- */
+function paintWaves(cv) {
+  const box = cv.parentElement, w = box.offsetWidth, h = box.offsetHeight;
+  if (!w || !h) return;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = w * dpr; cv.height = h * dpr;
+  const g = cv.getContext("2d"); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, w, h);
+  const rgb = cv.dataset.stroke, a = +cv.dataset.alpha, N = 46;
+  g.lineWidth = .8;
+  for (let i = 0; i < N; i++) {
+    const k = i / (N - 1);
+    g.strokeStyle = `rgba(${rgb},${(a * (.55 + .45 * Math.sin(k * Math.PI))).toFixed(3)})`;
+    g.beginPath();
+    for (let x = 0; x <= w + 8; x += 8) {
+      const y = h * (.12 + .86 * k)
+        + Math.sin(x / w * 5.2 + k * 3.1) * (14 + 30 * k)
+        + Math.sin(x / w * 11 - k * 5.4) * 7;
+      x ? g.lineTo(x, y) : g.moveTo(x, y);
+    }
+    g.stroke();
+  }
+}
+const waveCanvases = [...document.querySelectorAll(".waves")];
+let waveRaf = 0;
+const repaintWaves = () => { cancelAnimationFrame(waveRaf); waveRaf = requestAnimationFrame(() => waveCanvases.forEach(paintWaves)); };
+if ("ResizeObserver" in window) { const ro = new ResizeObserver(repaintWaves); waveCanvases.forEach(c => ro.observe(c.parentElement)); }
+addEventListener("resize", repaintWaves); repaintWaves();
+
+/* ---- Blue-ink mouse trace (fine pointers only, skipped for reduced motion) ---- */
+(function () {
+  if (reduceMotion || !matchMedia("(pointer: fine)").matches) { document.getElementById("trace").remove(); return; }
+  const cv = document.getElementById("trace"), g = cv.getContext("2d");
+  const LIFE = 700, pts = [];
+  let raf = 0;
+  function size() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; g.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  size(); addEventListener("resize", size);
+  function frame(now) {
+    g.clearRect(0, 0, innerWidth, innerHeight);
+    while (pts.length && now - pts[0].t > LIFE) pts.shift();
+    g.lineCap = "round"; g.lineJoin = "round";
+    for (let i = 1; i < pts.length; i++) {
+      const p0 = pts[i - 1], p1 = pts[i], age = (now - p1.t) / LIFE, k = 1 - age;
+      g.strokeStyle = `rgba(31,63,168,${(.55 * k).toFixed(3)})`;
+      g.lineWidth = 1 + 3 * k * (i / pts.length);
+      g.beginPath(); g.moveTo(p0.x, p0.y); g.lineTo(p1.x, p1.y); g.stroke();
+    }
+    raf = pts.length ? requestAnimationFrame(frame) : 0;
+  }
+  addEventListener("pointermove", e => {
+    if (e.pointerType && e.pointerType !== "mouse" && e.pointerType !== "pen") return;
+    pts.push({ x: e.clientX, y: e.clientY, t: performance.now() });
+    if (pts.length > 80) pts.shift();
+    if (!raf) raf = requestAnimationFrame(frame);
+  }, { passive: true });
+})();
+
+/* ---- AI question assistant ---- */
+(function () {
+  const panel = document.getElementById("chat"), launch = document.getElementById("chatLaunch");
+  const log = document.getElementById("chatLog"), form = document.getElementById("chatForm");
+  const input = document.getElementById("chatInput"), send = document.getElementById("chatSend");
+  const sugg = document.getElementById("chatSugg");
+  const sid = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2));
+  const history = [];
+  let busy = false;
+
+  try { if (sessionStorage.getItem("ww-chat-ok") === "1") panel.dataset.ok = "true"; } catch (e) {}
+
+  function add(cls, text) {
+    const d = document.createElement("div");
+    d.className = "msg " + cls; d.textContent = text;     // text only: never rendered as HTML
+    log.appendChild(d); log.scrollTop = log.scrollHeight; return d;
+  }
+  function welcome() { if (!log.childElementCount) add("msg-bot", t("ch_welcome")); }
+  function open() {
+    panel.hidden = false; launch.hidden = true; launch.setAttribute("aria-expanded", "true");
+    if (panel.dataset.ok === "true") { welcome(); input.focus(); } else document.getElementById("chatAgree").focus();
+  }
+  function close() { panel.hidden = true; launch.hidden = false; launch.setAttribute("aria-expanded", "false"); launch.focus(); }
+
+  launch.addEventListener("click", open);
+  document.getElementById("chatClose").addEventListener("click", close);
+  addEventListener("keydown", e => { if (e.key === "Escape" && !panel.hidden) close(); });
+  document.getElementById("chatAgree").addEventListener("click", () => {
+    panel.dataset.ok = "true";
+    try { sessionStorage.setItem("ww-chat-ok", "1"); } catch (e) {}
+    welcome(); input.focus();
+  });
+
+  async function ask(text) {
+    text = text.trim().slice(0, 600);
+    if (!text || busy) return;
+    busy = true; send.disabled = true; sugg.hidden = true; input.value = "";
+    add("msg-user", text); history.push({ role: "user", content: text });
+    if (!CHAT_API_URL) { add("msg-bot", t("ch_offline")); history.pop(); busy = false; send.disabled = false; return; }
+    const typing = add("msg-bot msg-typing", ""); typing.innerHTML = "<i></i><i></i><i></i>";
+    const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), 45000);
+    try {
+      const res = await fetch(CHAT_API_URL, {
+        method: "POST", headers: { "Content-Type": "application/json" }, signal: ctl.signal,
+        body: JSON.stringify({ sessionId: sid, lang, consent: true, messages: history.slice(-12) })
+      });
+      typing.remove();
+      if (res.status === 429) { add("msg-note", t("ch_busy")); history.pop(); }
+      else if (!res.ok) throw new Error(res.status);
+      else {
+        const data = await res.json();
+        const reply = String(data.reply || "").slice(0, 3000);
+        add("msg-bot", reply); history.push({ role: "assistant", content: reply });
+      }
+    } catch (e) {
+      typing.remove(); add("msg-note", t("ch_err")); history.pop();
+    } finally { clearTimeout(timer); busy = false; send.disabled = false; input.focus(); }
+  }
+  form.addEventListener("submit", e => { e.preventDefault(); ask(input.value); });
+  sugg.querySelectorAll(".sg").forEach(b => b.addEventListener("click", () => ask(b.textContent)));
+})();
 
 let saved = null;
 try { saved = localStorage.getItem(KEY); } catch (e) {}
