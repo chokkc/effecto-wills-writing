@@ -16,7 +16,9 @@ You need three free or pay-as-you-go accounts. Keys must be entered by you, not 
 2. **Resend** (sends the email copy): sign up at resend.com **using chokkc.m100@gmail.com**, then create an API key. Resend's shared test sender can only deliver to the address the account was created with, which is exactly what we need. (To send from your own domain later, verify the domain in Resend and change `RECORD_FROM`.)
 3. **Cloudflare**: create a free account at cloudflare.com.
 
-Then, in a terminal in this `cloudflare-worker` folder:
+**Shortcut:** in PowerShell, in this folder, run `.\deploy.ps1`. It does everything below and updates `index.html` for you.
+
+Or by hand, in a terminal in this `cloudflare-worker` folder:
 
 ```bash
 npx wrangler login
